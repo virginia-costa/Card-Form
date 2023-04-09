@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <title>Desafio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" />
+</head>
+
+<body>
+    <main>
+        <section class="tarjetas">
+            <article class="frente">
+                <img class="logo" src="./card-logo.svg" alt="" />
+                <p class="numero">0000 0000 0000 0000</p>
+                <span class="nombre">JANE APLESEED</span>
+                <span class="caducidad">00/00</span>
+            </article>
+            <article class="dorso">
+                <p class="cvc">000</p>
+            </article>
+        </section>
+        <section class="formulario" id="formulario">
+            <form action="">
+                <label for="cardhold_name">CARDHOLDER NAME</label><br />
+                <input class="input1" type="text" placeholder=" e.g. Jane Apleseed" id="cardhold_name"
+                    name="cardhold_name" pattern="^[a-zA-Z]+$" required />
+                <p class="mensajeError" id="errorNombre"></p>
+                <br /><br />
+                <label for="card_number">CARD NUMBER</label><br />
+                <input class="input1" id="card_number" type="number" minlength="16" maxlength="16"
+                    placeholder=" e.g. 1234 5678 0123 0000" name="card_number" />
+                <p class="mensajeError" id="errorNumero"></p>
+                <br /><br />
+                <fieldset>
+                    <label for="lMY">EXP.DATE (MM/AA)</label>
+                    <label class="lCVC" for="lCVC"> CVC</label><br />
+                    <input class="input2" type="number" id="MM" minlength="2" maxlength="2" placeholder="  MM"
+                        name="MM" />
+                    <p class="mensajeError" id="errorMes"></p>
+                    <input class="input2" type="number" id="YY" minlength="2" maxlength="2" placeholder="YY"
+                        name="YY" />
+                    <p class="mensajeError" id="errorAño"></p>
+                    <input class="input3" type="number" id="CVC" minlength="3" maxlength="3" type="number"
+                        placeholder=" e.g. 123" name="CVC" />
+                    <p class="mensajeError" id="errorCVC"></p>
+                </fieldset>
+                <br />
+                <button type="submit" value="Confirm">Confirm</button>
+            </form>
+        </section>
+        <section class="formulario completeStates" id="completeStates">
+            <img src="./icon-complete.svg" alt="iconComplete" class="icono" />
+            <p class="gracias">THANK YOU!</p>
+            <p class="mensaje">We've added your card details</p>
+            <button class="completo">Continue</button>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
+
+</html>

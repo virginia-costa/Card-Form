@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="link rel=" preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section class="tarjetas">
+            <article class="frente">
+                <img class="logo" src="./card-logo.svg" alt="">
+                <p class="numero">0000 0000 0000 0000</p>
+                <span class="nombre">JANE APLESEED</span>
+                <span class="caducidad">00/00</span>
+            </article>
+            <article class="dorso">
+                <p class="cvc">000</p>
+            </article>
+        </section>
+        <section class="formulario">
+            <form action="">
+                <label for="cardhold_name">CARDHOLDER NAME</label><br>
+                <input class="input1" type="text" placeholder=" e.g. Jane Apleseed" id="cardhold_name"><br><br>
+                <label for="card_number">CARD NUMBER</label><br>
+                <input class="input1" id="card_number" type="number" minlength="16" maxlength="16"
+                    placeholder=" e.g. 1234 5678 0123 0000" id="card_number" minlength="16" maxlength="16"><br><br>
+                <fieldset>
+                    <label for="lMY">EXP.DATE (MM/AA)</label>
+                    <label class="lCVC" for="lCVC"> CVC</label><br />
+                    <input class="input2" id="MM" minlength="2" maxlength="2" placeholder="  MM" name="MM" />
+                    <input class="input2" id="YY" minlength="2" maxlength="2" placeholder="YY" name="YY" />
+                    <input class="input3" id="CVC" minlength="3" maxlength="3" type="number" placeholder=" e.g. 123"
+                        name="CVC" />
+                </fieldset><br>
+                <button type="submit">Confirm</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

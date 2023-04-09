@@ -1,0 +1,384 @@
+/* ESTILO GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100vh;
+    width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "tarjetas formulario";
+    height: 100vh;
+    width: 100%;
+}
+
+/* ESTILO DE TARJETAS */
+/* FONDO */
+.tarjetas {
+    grid-area: tarjetas;
+    background-image: url(./bg-main-desktop.png);
+    background-repeat: no-repeat;
+}
+
+/* FRENTE DE LA TARJETA */
+article {
+    background-image: url(./bg-card-front.png);
+    background-repeat: no-repeat;
+    width: 24.5rem;
+    height: 13.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1rem 2rem 0 hsla(0, 0%, 0%, 0.2), 0 2.5rem 4rem 0 hsla(0, 0%, 0%, 0.19);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "logo logo"
+        "numero numero"
+        "nombre caducidad";
+    margin-top: 10rem;
+    margin-left: 12rem;
+}
+
+/* DENTRO DE LA TARJETA */
+.logo {
+    grid-area: logo;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.numero {
+    grid-area: numero;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    color: white;
+    letter-spacing: 0.15rem;
+}
+
+.nombre {
+    grid-area: nombre;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    margin-left: 1.2rem;
+}
+
+.caducidad {
+    grid-area: caducidad;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* DORSO DE LA TARJETA */
+.dorso {
+    background-image: url(./bg-card-back.png);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-size: contain;
+    width: 24.5rem;
+    height: 13.5rem;
+    box-shadow: 0 1rem 2rem 0 hsla(0, 0%, 0%, 0.2), 0 2.5rem 4rem 0 hsla(0, 0%, 0%, 0.19);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "cvc";
+    margin-top: 1rem;
+    margin-left: 18rem;
+}
+
+.cvc {
+    grid-area: cvc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+    margin-right: 2.8rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ESTILO DE FORMULARIO */
+.formulario {
+    grid-area: formulario;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    line-height: 180%;
+    margin-top: 0;
+}
+
+/* ESTILO DE LOS INPUTS, LABELS Y BOTÓN */
+
+.input1 {
+    height: 2.5rem;
+    width: 25rem;
+    border-radius: 0.4rem;
+    border: 2px solid hsl(315, 12%, 87%);
+}
+
+fieldset {
+    border: none;
+    border-radius: 0.4rem;
+}
+
+.lCVC {
+    margin-left: 4.5rem;
+}
+
+.input2 {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    border: 2px solid hsl(315, 12%, 87%);
+}
+
+.input3 {
+    width: 10.5rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: 2px solid hsl(315, 12%, 87%);
+    margin-left: 2rem;
+}
+
+::placeholder {
+    color: rgb(199, 194, 194);
+    font-size: 135%;
+}
+
+button {
+    width: 26rem;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    color: white;
+    background-color: hsl(278, 60%, 18%);
+    font-size: 100%;
+}
+
+/* HOVERS DE LOS INPUTS */
+
+.input1:hover {
+    border: 2px solid hsl(315, 46%, 65%);
+}
+
+.input2:hover {
+    border: 2px solid hsl(315, 46%, 65%);
+}
+
+.input3:hover {
+    border: 2px solid hsl(315, 46%, 65%);
+}
+
+button:active {
+    color: white;
+    background-color: hsl(314, 40%, 39%);
+}
+
+/* COMPLETE STATES */
+
+.completeStates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#completeStates {
+    display: none;
+}
+
+/* MENSAJE ERROR */
+
+.mensajeError {
+    color: red;
+    font-size: small;
+    display: none;
+    position: absolute;
+}
+
+
+/* VISTA MOBILE */
+
+@media (min-width:375px) and (max-width: 1000px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas: "tarjetas"
+            "formulario";
+    }
+
+    .tarjetas {
+        grid-area: tarjetas;
+        background-image: url(./bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    article {
+        background-image: url(./bg-card-front.png);
+        background-repeat: no-repeat;
+        width: 15rem;
+        height: 8rem;
+        border-radius: 10px;
+        box-shadow: 0 1rem 2rem 0 hsla(0, 0%, 0%, 0.2), 0 2.5rem 4rem 0 hsla(0, 0%, 0%, 0.19);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "logo logo"
+            "numero numero"
+            "nombre caducidad";
+        position: absolute;
+        margin-top: 6rem;
+        margin-left: 2rem;
+        z-index: 2;
+    }
+
+    .dorso {
+        background-image: url(./bg-card-back.png);
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        background-size: contain;
+        width: 15rem;
+        height: 8rem;
+        box-shadow: 0 1rem 2rem 0 hsla(0, 0%, 0%, 0.2), 0 2.5rem 4rem 0 hsla(0, 0%, 0%, 0.19);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "cvc";
+        margin-top: 1.5rem;
+        margin-left: 5rem;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .logo {
+        grid-area: logo;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        width: 20%;
+        height: auto;
+    }
+
+    .numero {
+        grid-area: numero;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 1rem;
+        color: white;
+
+    }
+
+    .nombre {
+        grid-area: nombre;
+        font-size: 0.6rem;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 10rem;
+    }
+
+    .caducidad {
+        grid-area: caducidad;
+        font-size: 0.6rem;
+        color: white;
+    }
+
+    .cvc {
+        grid-area: cvc;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 0.7rem;
+        color: white;
+        margin-right: 2.8rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .formulario {
+        grid-area: formulario;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80%;
+        line-height: 120%;
+        margin-top: 3rem
+    }
+
+    .input1 {
+        height: 2rem;
+        width: 20rem;
+        border-radius: 0.4rem;
+        border: 2px solid hsl(315, 12%, 87%);
+
+    }
+
+    fieldset {
+        border: none;
+        border-radius: 0.4rem;
+        ;
+    }
+
+    .lCVC {
+        margin-left: 4.5rem;
+    }
+
+    .input2 {
+        width: 5rem;
+        height: 2rem;
+        border-radius: 0.4rem;
+        border: 2px solid hsl(315, 12%, 87%);
+    }
+
+    .input3 {
+        width: 7.5rem;
+        height: 2rem;
+        border-radius: 0.3rem;
+        border: 2px solid hsl(315, 12%, 87%);
+        margin-left: 2rem;
+    }
+
+    ::placeholder {
+        color: rgb(199, 194, 194);
+        font-size: 135%;
+    }
+
+    button {
+        width: 20rem;
+        height: 2rem;
+        border-radius: 0.4rem;
+        color: white;
+        background-color: hsl(278, 60%, 18%);
+        font-size: 100%;
+     }
+}
+
+.mensajeError {
+    color: red;
+    font-size: small;
+    display: none;
+    position: absolute;
+    margin-bottom: 1rem;
+}
